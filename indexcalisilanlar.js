@@ -2,31 +2,31 @@
 
 /* İşte veriniz bu */
 const orijinalTatlar = [
-  "Muz",
-  "Vişne",
-  "Ceviz",
-  "Kestane",
-  "Kiraz",
-  "Çikolata",
-  "Fındık Çikolata",
-  "Fıstık Çikolata",
-  "Badem Çikolata",
-  "Franbuaz",
-  "Yaban Mersini",
-  "Tarçın",
-  "Badem",
-  "Kahve",
-  "Fındık",
-  "Anten Fıstık",
-  "Limon",
-  "Misket Limon",
-  "Akçaağaç Şurubu",
-  "Şeftali",
-  "Nane",
-  "Ananas",
-  "Ahududu",
-  "Çilek",
-  "Vanilya",
+    "Muz",
+    "Vişne",
+    "Ceviz",
+    "Kestane",
+    "Kiraz",
+    "Çikolata",
+    "Fındık Çikolata",
+    "Fıstık Çikolata",
+    "Badem Çikolata",
+    "Franbuaz",
+    "Yaban Mersini",
+    "Tarçın",
+    "Badem",
+    "Kahve",
+    "Fındık",
+    "Anten Fıstık",
+    "Limon",
+    "Misket Limon",
+    "Akçaağaç Şurubu",
+    "Şeftali",
+    "Nane",
+    "Ananas",
+    "Ahududu",
+    "Çilek",
+    "Vanilya",
 ];
 
 /* Görev 1: Diziyi kopyalama!
@@ -40,11 +40,18 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(dizi){
-  /*kod buraya*/ let yeniDizi = [...dizi] //spread operatoru
-  return yeniDizi
+function kopyala(dizi) {
+    let yeniDizi = [...dizi] //spread operatoru
+    return yeniDizi
 }
 //console.log(kopyala([1,2]))
+
+function kopyala(dizi) {
+    let yeniDizi = [...dizi]
+    return yeniDizi
+}
+//console.log([1,2])
+
 
 
 /* Görev 2:
@@ -56,15 +63,24 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 
 Örneğin: dizi25Cesit(orijinalTatlar) kodunuz düzgün çalışıyorsa true değerini döndürür.
 */
+function dizi25Cesit(dizi) {
+    if (dizi.lenght == 25) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+//console.log(dizi25Cesit(orijinalTatlar))
 
 
-function dizi25Cesitmi(dizi){
-  /*kod buraya*/ if (dizi.lenght = 25){
-    return true
-  }
-  else {
-    return false
-  }
+function dizi25Cesitmi(dizi) {
+  /*kod buraya*/ if (dizi.lenght = 25) {
+        return true
+    }
+    else {
+        return false
+    }
 }
 //console.log(dizi25Cesitmi(orijinalTatlar))
 
@@ -81,10 +97,26 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
   Örneğin: cesitEkle(orijinalTatlar, "Kakule") işlevi doğru çalıştığında ["Kakule", "Muz",..."Vanilya"] şeklinde dönmelidir
 */
 
+function cesitEkle(dizi, yeniTat) {
+    dizi.unshift(yeniTat)
+    return cesitEkle
 
-function cesitEkle(dizi, yeniTat){
+}
+console.log(cesitEkle(orijinalTatlar, "Kakule"))
+
+
+//bunun sonuna "findikli latte" ekle
+
+function cesitEkle2(dizi, yeniTat2) {
+    dizi.push(yeniTat2)
+    return cesitEkle2
+
+}
+console.log(cesitEkle2(dizi, yeniTat2))
+
+function cesitEkle(dizi, yeniTat) {
   /*kod buraya*/ dizi.unshift(yeniTat)
-  return dizi
+    return dizi
 }
 //console.log(cesitEkle(orijinalTatlar, "kakule"));
 
@@ -101,10 +133,17 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
    Örneğin: sonCesitiKaldir(orijinalTatlar) çalıştırıldığında ["Kakule", "Muz",..."Çilek"] döndürülür.
 */
 
+function sonCesitiKaldir(dizi) {
 
-function sonCesitiKaldir(dizi){
+    dizi.pop()
+    return dizi
+}
+console.log(sonCesitiKaldir(orijinalTatlar))
+
+
+function sonCesitiKaldir(dizi) {
   /*kod buraya*/ dizi.pop();
-  return dizi;
+    return dizi;
 }
 
 //console.log(orijinalTatlar.pop());
@@ -121,9 +160,21 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(dizi, index){
+
+function indekstekiCesitiGetir(dizi, i) {
+    for (i = 0; i < dizi.lenght; i++) {
+        return dizi[i]
+    }
+}
+console.log(indekstekiCesitiGetir(orijinalTatlar, i))
+
+
+
+
+
+function indekstekiCesitiGetir(dizi, index) {
   /*kod buraya*/ return dizi[index];
-  
+
 }
 //console.log(indekstekiCesitiGetir(orijinalTatlar,5))
 
@@ -143,13 +194,24 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(dizi, lezzetAdi){
-  
-let i = dizi.indexOf (lezzetAdi)
+function ismeGoreCesitCikar(dizi, lezzet) {
 
-dizi.splice (i,1)
+    let i = indexOf(lezzet)
+    dizi.splice(i, 1)
+    return dizi
+}
+console.log(orijinalTatlar, "Kakao")
 
-return dizi
+
+
+
+function ismeGoreCesitCikar(dizi, lezzetAdi) {
+
+    let i = dizi.indexOf(lezzetAdi)
+
+    dizi.splice(i, 1)
+
+    return dizi
 }
 
 //console.log (ismeGoreCesitCikar(orijinalTatlar, "Çilek"))
@@ -173,37 +235,31 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 
   Bu sorunu çözmek için GELİŞMİŞ DİZİ YÖNTEMLERİNİ (yani .filter) KULLANMAYIN.
 */
-function ismeGoreFiltrele (dizi, filtre) {
-  let result = []
-  for (i = 0 ; i < dizi.lenght; i++) {
-    if (dizi[i].includes(filtre))
-    result.push (dizi[i])
 
-  }
-  return result
-}
+function ismeGoreFiltrele(dizi, filtrele) {
 
-function ismeGoreFiltrele(dizi, filtre){
-  let result = [];
-  for ( let i = 0 ; i< dizi.length ; i++ ) {
-if (dizi[i].includes(filtre)) {
-  result.push (dizi[i])
-}
+    dizi.filter(filtrele)
 
+    return dizi
 }
-return result
+console.log(orijinalTatlar, "Çikolata")
+
+//-----
+
+
+function ismeGoreFiltrele(dizi, filtre) {
+    let result = [];
+    for (let i = 0; i < dizi.length; i++) {
+        if (dizi[i].includes(filtre)) {
+            result.push(dizi[i])
+        }
+
+    }
+    return result
 
 }
 //console.log (ismeGoreFiltrele(orijinalTatlar, "lata")) //soldaki alan diziyi, sağdaki alan filtreyi tanımlar 
 
-function ismeGoreFiltrele (dizi, filtrele) {
-
-  dizi.filter (filtrele)   
- 
-  return dizi
- }
-// console.log(orijinalTatlar,"Çilek")
- 
 
 
 /* ALIŞTIRMA */
@@ -218,22 +274,17 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
-} 
-
-//split metodu kullanımı, dizi.split (" ") parantez için boşluk var, bu boşluk karakterine göre diziyi parçalıyor yeni bir array oluşturuyor. 
-
 function ortalamaKelimeSayisi(dizi, bolunen) {
 
-  let kelimeSayisi = 0
-  for (i = 0; i<dizi.lenght; i++ ) {
-      dizi.split(" ")
-      return kelimeSayisi + dizi.lenght
-  }
+    let kelimeSayisi = 0
+    for (i = 0,  ) {
+        dizi.split(" ")
+        return kelimeSayisi + dizi.lenght
+    }
 }
+console.log(ortalamaKelimeSayisi(kelimeSayisi))
 
-//console.log(ortalamaKelimeSayisi(orijinalTatlar))
+//split metodu kullanımı, dizi.split (" ") parantez için boşluk var, bu boşluk karakterine göre diziyi parçalıyor yeni bir array oluşturuyor. 
 
 
 
@@ -251,34 +302,22 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 
 //spread , concat metodlarıyla yapılabilir. Bu ikisiyle array'leri birleştirebilirsin. Rastgele seçmek için Math.random seçilebilir. 
 
-
-let yeniCikti = [...orijinalTatlar, ...yeniTatlar, ...mevsimlikTatlar, ...bolgeselTatlar]
-
-function rastgeleTatlar( orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar){ 
-
-  let yeniCikti = [...orijinalTatlar, ...yeniTatlar, ...mevsimlikTatlar, ...bolgeselTatlar]
-
-  
-
-  return yeniCikti
-
-  Math.random()
-  
+function rastgeleTatlar(/*kod buraya*/) {
+    /*kod buraya*/
 }
-console.log (rastgeleTatlar())
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
- const yeniTatlar = [
-   "Badem",
-   "Ballı Badem",
+// const yeniTatlar = [
+//   "Badem",
+//   "Ballı Badem",
 //   "Fıstık Ezmesi",
 //   "Profiterol",
 //   "Madlen Çikolata"
-]
+// ]
 
-const mevsimlikTatlar = [
-"Pekan",
- "Kaju",
+// const mevsimlikTatlar = [
+// "Pekan",
+// "Kaju",
 // "Çikolatalı Mousse",
 // "Fransız Vanilyası",
 // "Yumurta",
@@ -288,11 +327,11 @@ const mevsimlikTatlar = [
 // "Kaymaklı Biskuvi",
 // "Beyaz Çikolata",
 // "Mango"
-]
+// ]
 
-const bolgeselTatlar = [
-"Kaymak",
-"Karpuz",
+// const bolgeselTatlar = [
+// "Kaymak",
+// "Karpuz",
 // "Karadut",
 // "Turunç",
 // "Portakal",
@@ -303,26 +342,25 @@ const bolgeselTatlar = [
 // "Kuru üzüm",
 // "Peynir",
 // "Karamel"
- ]
-
+// ]
 
 
 /* Lütfen bu satırın altındaki hiçbir şeyi değiştirmeyin */
-function sa(){
-  console.log('Calışıyor');
-  return 'as';
+function sa() {
+    console.log('Calışıyor');
+    return 'as';
 }
 sa();
 module.exports = {
-  sa,
-  dizi25Cesitmi,
-  cesitEkle,
-  sonCesitiKaldir,
-  indekstekiCesitiGetir,
-  ismeGoreCesitCikar,
-  kopyala,
-  ismeGoreFiltrele,
-  ortalamaKelimeSayisi,
-  rastgeleTatlar
+    sa,
+    dizi25Cesitmi,
+    cesitEkle,
+    sonCesitiKaldir,
+    indekstekiCesitiGetir,
+    ismeGoreCesitCikar,
+    kopyala,
+    ismeGoreFiltrele,
+    ortalamaKelimeSayisi,
+    rastgeleTatlar
 }
 
